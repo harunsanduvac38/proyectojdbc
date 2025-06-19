@@ -12,9 +12,9 @@ public class Class03BuscadorPlantillaFuncion {
         System.out.println("Eliga una Función: \n 1 - ENFERMERA \n 2 - INTERINO" );
         int num = teclado.nextInt();
         if(num == 1){
-            funcionTeclado =  "\"ENFERMERA\"";
+            funcionTeclado =  "'ENFERMERA'";
         }else if(num==2) {
-            funcionTeclado = "\"INTERINO\"";
+            funcionTeclado = "'INTERINO'";
         }
 
         try {

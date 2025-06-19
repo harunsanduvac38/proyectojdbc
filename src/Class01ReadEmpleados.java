@@ -26,12 +26,21 @@ public class Class01ReadEmpleados {
 
         // 6) como es un consulta sleect, necesitamos un ResultSet y el metodo executeQuery()
         ResultSet rs = st.executeQuery(sql); 
-        rs.next();
-        rs.next();
+      
 
-        // 7) Recuperamos el primer apellido
-        String apellido = rs.getString("apellido");
-        System.out.println("Apellido: " + apellido);
+        // 7)recorremos los registros mediante un bucle while ( Recuperamos el primer apellido)
+        while(rs.next()) {
+            String apellido = rs.getString("apellido");
+            System.out.println("Apellido: " + apellido);
+
+
+        }
+
+        
+        // 8) Liberamos los recursos
+        rs.close();
+        cn.close();
+
 
         } catch (ClassNotFoundException e) {
             System.out.println("class:" + e);

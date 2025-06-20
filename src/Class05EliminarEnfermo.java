@@ -16,19 +16,7 @@ public class Class05EliminarEnfermo {
 
             Connection cn = DriverManager.getConnection(connectionString, "root", "root");
 
-            System.out.println("Inscription de Enfermo:");
-            String inscripcion = teclado.nextLine();
-
-            // DELETE FROM ENFERMO WHERE INSCRIPCION=1234;
-            String sql = "DELETE FROM ENFERMO WHERE INSCRIPCION=" + inscripcion;
-
             Statement st = cn.createStatement();
-
-            int deleted = st.executeUpdate(sql);
-
-            System.out.println("Enfermos eliminados: " + deleted);
-
-
 
             String sqlSelect = "Select * from ENFERMO";
 
@@ -39,6 +27,22 @@ public class Class05EliminarEnfermo {
                 String ape = rs.getString("APELLIDO");
                 System.out.println(ins + " - " + ape);
             }
+
+            System.out.println("Inscription de Enfermo para Eliminar:");
+            String inscripcion = teclado.nextLine();
+
+            // DELETE FROM ENFERMO WHERE INSCRIPCION=1234;
+            String sql = "DELETE FROM ENFERMO WHERE INSCRIPCION=" + inscripcion;
+
+            
+
+            int deleted = st.executeUpdate(sql);
+
+            System.out.println("Enfermos eliminados: " + deleted);
+
+
+
+
 
 
             rs.close();
